@@ -4,7 +4,7 @@
 #Purpose to send disk utilization email
 TMP=/tmp/disk_util
 HTML=/tmp/disk_util.html
-df -H | grep -vE '^Filesystem|dev' | awk '{print $4 "," $5}' >> $TMP
+df -H | grep -vE '^Filesystem|dev' | awk '{print $4 "," $5}' > $TMP
 df -H | grep /boot | awk '{print $5 "," $6}' >> $TMP
 awk '
 BEGIN{
